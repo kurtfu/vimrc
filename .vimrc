@@ -2,24 +2,26 @@
 " System Configurations
 " ----------------------------------------------------------------------------
 
-" Set plugin paths according to the host OS
+" Set paths for Windows to use Unix-like Vim directory structure
 if has('win32')
-  let plug_dir=$HOME.'\vimfiles\plugged'
-  let vim_plug=$HOME.'\vimfiles\autoload\plug.vim'
-else
-  let plug_dir='~/.vim/plugged'
-  let vim_plug='~/.vim/autoload/plug.vim'
+  set rtp^=~/.vim
+  set viminfo+=n~/.viminfo
 endif
 
 " Automatically download and install vim-plug if it is not present
-if empty(glob(vim_plug))
-  silent execute '!curl -fLo '.vim_plug.' --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  if has('win32')
+    silent !curl -fLo .vim\autoload\plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  else
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  endif
 endif
 
 " The list of plugins to be installed when 'PlugInstall' is called.
 " Automatically executes 'filetype plugin indent on' and 'syntax enable'.
-call plug#begin(plug_dir)
+call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'preservim/nerdtree'
   Plug 'simnalamburt/vim-mundo'
