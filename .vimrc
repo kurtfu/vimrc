@@ -40,6 +40,7 @@ set autoread
 " Backspacing over autoindent, line break and start of insert action
 set backspace=indent,eol,start
 
+set shiftwidth=4   " The length of the tab indentation
 set softtabstop=4  " The length of soft tabs
 set expandtab      " Use soft tabs when <TAB> is pressed
 
