@@ -55,6 +55,10 @@ set completeopt=menuone,noinsert
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" Recursively search for 'tags' file starting from the current directory
+" up until the root directory
+set tags=./tags;
+
 " ----------------------------------------------------------------------------
 " UI Configurations
 " ----------------------------------------------------------------------------
