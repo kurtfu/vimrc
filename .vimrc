@@ -46,6 +46,9 @@ set shiftwidth=4   " The length of the tab indentation
 set softtabstop=4  " The length of soft tabs
 set expandtab      " Use soft tabs when <TAB> is pressed
 
+set foldmethod=syntax  " Fold according to syntax file
+set nofoldenable       " Disable automatic folding
+
 " Remove any trailing whitespace at the end of each line
 autocmd BufWritePre * %s/\s\+$//e
 
