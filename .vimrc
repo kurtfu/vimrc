@@ -68,8 +68,8 @@ set tags=./tags;
 " UI Configurations
 " ----------------------------------------------------------------------------
 
-set wildmenu       " Use command-line completion menu
-set wildmode=full  " Complete the next full match
+set wildmenu               " Use command-line completion menu
+set wildmode=longest:full  " Complete till longest common string
 
 set guioptions-=m  " Hide menu bar
 set guioptions-=T  " Hide toolbar
