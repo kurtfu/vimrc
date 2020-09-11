@@ -24,9 +24,11 @@ endif
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'preservim/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'simnalamburt/vim-mundo'
   Plug 'sonph/onehalf', {'rtp': 'vim/'}
   Plug 'vim-airline/vim-airline'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 " Automatically install plugins at the startup sequence
@@ -86,8 +88,11 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" Set font as DejaVu Sans Mono with the size of 10
-set guifont=DejaVu_Sans_Mono:h10
+" Set font as DejaVu Sans Mono Nerd Font with the size of 10
+set guifont=DejaVuSansMono_NF:h10
+
+" Set encoding to UTF-8 to show glyphs
+set encoding=UTF-8
 
 set number      " Show line numbers
 set cursorline  " Highlight current line
@@ -104,3 +109,9 @@ let NERDTreeStatusline='%#NonText#'  " Hide NERDTree statusline
 
 " Assign keybinding to 'NERDTreeToggle'
 map <C-n> :NERDTreeToggle<CR>
+
+let NERDTreeDirArrowExpandable='▸'   " Use 'right' arrow for expandable folder
+let NERDTreeDirArrowCollapsible='▾'  " Use 'down' arrow for collapsible folder
+
+" Use Nerd Fonts for the Git state symbols
+let NERDTreeGitStatusUseNerdFonts=1
