@@ -24,11 +24,12 @@ endif
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'preservim/nerdtree'
-  Plug 'ryanoasis/vim-devicons'
   Plug 'simnalamburt/vim-mundo'
   Plug 'sonph/onehalf', {'rtp': 'vim/'}
+  Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Automatically install plugins at the startup sequence
